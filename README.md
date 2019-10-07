@@ -10,12 +10,30 @@ a. Given the variable `userNameOne` below, print *"The username is Test User"*. 
 ```swift
 var userNameOne: String? = "Test User"
 ```
+```
+var userNameOne: String? = "Test User"
+
+
+if let name = userNameOne {
+    print("The username is \(name)")
+}
+```
 
 b. Given the variable `userNameTwo` below, print *"The username is undefined"*.  Use the *nil coalescing operator* (`??`).
 
 ```swift
 var userNameTwo: String? = nil
 ```
+```
+Answer:
+var userNameTwo: String? = nil
+
+let userName = userNameTwo ?? " "
+print("The username is undefined")
+```
+
+
+
 
 ## Question 2
 
@@ -24,13 +42,36 @@ a. Given the variables `rectOneWidth` and `rectOneHeight` below, print "The area
 ```swift
 var rectOneWidth: Double? = 5
 var rectOneHeight: Double? = 10
-```
 
+```
+```
+Answer:
+var rectOneWidth: Double? = 5
+var rectOneHeight: Double? = 10
+
+if let rectW = rectOneWidth, let rectH = rectOneHeight {
+    print(rectW * rectH)
+}
+```
 b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are of rectTwo is not able to be calculated".  Use *Optional Binding* (`if let`) to print this message.
 
 ```swift
 var rectTwoWidth: Double? = nil
 var rectTwoHeight: Double? = nil
+```
+
+
+```
+Answer:
+var rectTwoWidth: Double? = nil
+var rectTwoHeight: Double? = nil
+
+var rectTwoWidth: Double? = nil
+var rectTwoHeight: Double? = nil
+
+if let recttwoW = rectTwoWidth, let rectTwoH = rectTwoHeight {
+    print("The area of rectTwo is not able to be calculated")
+}
 ```
 
 ## Question 3
@@ -43,6 +84,13 @@ var userOneName: String? = "Anne"
 var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
 ```
+```
+Answer:
+if let name = userOneName, let age = userOneAge, let height = userOneHeight {
+    print("Hello \(name), you are \(age) years old and \(height / 12) feet tall")
+}
+
+```
 
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
 
@@ -51,7 +99,14 @@ var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
 ```
+```
+Answer:
+var userTwoName: String? = nil
+var userTwoAge: Int? = 15
+var userTwoHeight: Double? = nil
 
+
+```
 
 ## Question 4
 
@@ -62,7 +117,16 @@ Give the variable `favoriteNumber`, write code that either prints "Your favorite
 ```swift
 var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
 ```
+```
+Answer:
+var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
 
+if let favenum = favoriteNumber {
+    print("Your favorite number is \(favenum)")
+} else {
+    print("I don't know what your favorite number is")
+}
+```
 
 
 ## Question 5
