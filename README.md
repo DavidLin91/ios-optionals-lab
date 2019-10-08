@@ -105,6 +105,11 @@ var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
 
+if let userN = userTwoName, let userA = userTwoAge, let userH = userTwoHeight {
+    print("hello\(userN), you are \(userA) years old and \(userH) tall")
+} else if let userA = userTwoAge {
+    print("Hello user! You are \(userA) years old and I don't know how tall you are")
+}
 
 ```
 
@@ -138,6 +143,23 @@ var numOne = Bool.random() ? Int.random(in: 0...10) : nil
 var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
 var numThree = Bool.random() ? Int.random(in: 0...10) : nil
 ```
+```
+Answer: 5
+var numOne = Bool.random() ? Int.random(in: 0...10) : nil
+var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
+var numThree = Bool.random() ? Int.random(in: 0...10) : nil
+var numSum = (numOne ?? 0) + (numTwo ?? 0) + (numThree ?? 0)
+
+if numSum == 0 {
+    print("the total is zero")
+} else {
+    print(numSum)
+} 
+```
+
+
+
+
 
 ## Question 6
 
@@ -152,6 +174,35 @@ for _ in 0..<10 {
 ```
 
 b. Using the same variable, find the average of all non-nil values.
+
+```
+Answer:
+
+
+A.
+var numbers = [Int?]()
+var sum = 0
+for _ in 0..<10 {
+    numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
+}
+for num in numbers {
+    sum += (num ?? 0)
+}
+print("The sum of all the numbers is \(sum)")
+
+
+
+B.
+
+for num in numbers {
+    sum += (num ?? 0)
+}
+print(sum/numbers.count)
+
+
+```
+
+
 
 ## Extra Questions
 
