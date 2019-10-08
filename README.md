@@ -194,11 +194,16 @@ print("The sum of all the numbers is \(sum)")
 
 B.
 
+sum = 0
+var nonNilValueCount = 0
 for num in numbers {
-    sum += (num ?? 0)
-}
-print(sum/numbers.count)
 
+    if let unwrappedNum = num {
+        nonNilValueCount += 1
+        sum += unwrappedNum
+    }
+}
+ print("The average of the \(nonNilValueCount) non-nil values is \(sum / nonNilValueCount)")
 
 ```
 
